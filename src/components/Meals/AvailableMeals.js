@@ -1,6 +1,6 @@
-import "./AvailableMeals.css";
-import MealItem from "./MealItem/MealItem";
-import { useEffect, useState } from "react";
+import './AvailableMeals.css';
+import MealItem from './MealItem/MealItem';
+import { useEffect, useState } from 'react';
 
 const AvailableMeals = (props) => {
   const [meals, setMeals] = useState();
@@ -9,14 +9,14 @@ const AvailableMeals = (props) => {
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://ghost-37ddc-default-rtdb.firebaseio.com/meals.json",
+        'https://ghost-37ddc-default-rtdb.firebaseio.com/meals.json',
         {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
         }
       );
       if (!response.ok) {
-        throw new Error("Something went wrong!");
+        throw new Error('Something went wrong!');
       }
       const responseData = await response.json();
 
@@ -31,7 +31,6 @@ const AvailableMeals = (props) => {
           image: responseData[key].image,
         });
       }
-      console.log(loadedMeals);
       setMeals(loadedMeals);
       setIsLoading(false);
     };
@@ -43,7 +42,7 @@ const AvailableMeals = (props) => {
 
   if (isLoading) {
     return (
-      <section className="MealsLoading">
+      <section className='MealsLoading'>
         <p>Loading...</p>
       </section>
     );
@@ -51,7 +50,7 @@ const AvailableMeals = (props) => {
 
   if (isError) {
     return (
-      <section className="MealsError">
+      <section className='MealsError'>
         <p>{isError}</p>
       </section>
     );
@@ -70,7 +69,7 @@ const AvailableMeals = (props) => {
       />
     ));
   return (
-    <section className="meals">
+    <section className='meals'>
       <ul>{mealslist}</ul>
     </section>
   );

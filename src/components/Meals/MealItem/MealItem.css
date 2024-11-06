@@ -1,14 +1,18 @@
+.card {
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 14px;
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
+}
 .meal {
   display: flex;
   justify-content: space-between;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 14px;
-  width: 80%;
-  background-color: transparent;
+  align-items: center;
 }
 
-.meal:hover {
+.card:hover {
   background-color: white;
   border-top: 2px #edeff9;
   box-shadow: 2px 2px 2px 2px #edf9;
@@ -32,4 +36,8 @@ img {
   height: 5rem;
   width: 5rem;
   border-radius: 10px;
+}
+.error-message {
+  color: red;
+  text-align: end;
 }
